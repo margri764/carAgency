@@ -1,0 +1,63 @@
+
+
+<div fxLayout="column" style="height: 30vh;">
+    <div fxFlex="30" style="border: 1px solid;">
+        <h1>Agencia</h1>
+    </div>
+
+    <div fxFlex="70">
+      <ul ngbNav #nav="ngbNav" class="nav-tabs" >
+        <li ngbNavItem  >
+          <a  ngbNavLink (click)="showNavContent()" style="border: 2px solid;">First</a>
+
+          <ng-template ngbNavContent >
+         
+          <div fxLayout="row">
+
+           <a (click)="go()" style="cursor: pointer; text-decoration: none;"> Autos 0km</a>
+            <!-- <div class="card" style="width: 18rem;">
+              <img src="../../../../assets/logo.png" width="5%" class="card-img-top" alt="...">
+                    </div>
+            <div class="card" style="width: 18rem;">
+              <img src="../../../../assets/logo.png" class="card-img-top" alt="...">
+            </div> -->
+          </div>
+
+          </ng-template>
+
+        </li>
+        <li ngbNavItem >
+          <a ngbNavLink  >Second</a>
+          <ng-template ngbNavContent >Second content</ng-template>
+        </li>
+
+        <li ngbNavItem>
+          <a ngbNavLink (mouseenter)="showNavContent()" >Third</a>
+          <ng-template ngbNavContent >Third content</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Fourth</a>
+          <ng-template ngbNavContent >Fourth content</ng-template>
+        </li>
+
+  <!-- dropdown!! -->
+
+<!-- 
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Dropdown</a>
+        <div ngbDropdownMenu>
+          <button ngbDropdownItem>Action</button>
+          <button ngbDropdownItem>Another action</button>
+          <button ngbDropdownItem>Something else here</button>
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem>Separated link</button>
+        </div>
+      </li> -->
+  
+    </ul>
+      <div [ngbNavOutlet]="nav" *ngIf="clicked"></div>
+        
+    </div>
+    <app-slide-up></app-slide-up>
+</div>
+
