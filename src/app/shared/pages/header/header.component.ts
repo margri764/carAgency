@@ -24,7 +24,7 @@ showNavContent( ){
 
 
 go(){
-  this.router.navigateByUrl('./zeromile');
+  this.router.navigateByUrl('./contact-us');
   console.log('fg')
 
 }

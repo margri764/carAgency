@@ -12,7 +12,7 @@ export class SlideUpComponent implements OnInit {
         // customize default values of carousels used by this component tree
         config.showNavigationArrows = true;
         config.showNavigationIndicators = true;
-        config.interval = 10;
+        config.interval = 10000;
         // config.wrap = false;
         // config.keyboard = false;
         // config.pauseOnHover = false;

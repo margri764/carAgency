@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarsModule } from './cars/cars.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { CarsModule } from './cars/cars.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    CarsModule,
-    NgbModule
+    NgbModule,
 
   ],
   providers: [],
