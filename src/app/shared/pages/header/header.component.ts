@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
-import { NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +12,14 @@ export class HeaderComponent implements OnInit {
   disabled = true;
 
   constructor(
-              private router : Router
+              private router : Router,
+              public route : ActivatedRoute
   ) { }
 
 
 
 showNavContent( ){
+  
     this.clicked=true;
 }
 

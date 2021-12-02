@@ -1,0 +1,35 @@
+<form  autocomplete="off" [formGroup]="myForm"> 
+      
+    <div class="form-floating">
+        <input type="text"  class="form-control"  [ngClass]= "{ 'is-invalid': invalidName}" id="floatingInput" formControlName="name" autofocus placeholder="ingrese nombre"> 
+            <span class="form-text text-danger animate__animated animate__tada" *ngIf ="validField ('name')">
+                No se permiten numeros ni caracteres especiales
+            </span> 
+        <label  for="floatingInput">Nombre y Apellido</label>
+    </div>
+      
+    <br><br>
+
+    <div class="form-floating">          
+        <input type="text" class="form-control" [ngClass]= "{ 'is-invalid': invalidPhone}" formControlName="phone" id="phone" placeholder="ingrese telefono">
+            <span class="form-text text-danger  animate__animated animate__tada" *ngIf ="validField ('phone')">
+                Este campo es obligatorio
+            </span> 
+        <label for="phone">Telefono / Celular</label>
+    </div> 
+    
+    <br><br>
+    
+    <div class="form-floating">          
+        <input type="email" class="form-control" [ngClass]= "{ 'is-invalid': invalidEmail}" formControlName="email" placeholder="email" >
+            <span class="form-text text-danger  animate__animated animate__tada" *ngIf ="validField ('email')">
+              No respeta formato de email 
+          </span> 
+        <label for="email">Correo electronico </label>
+    </div>                     
+   
+        <!-- <button class="btn btn-primary mt-5" (click)="previous()">Previous</button> -->
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary mt-5">Submit</button>
+     
+                  
+</form> 

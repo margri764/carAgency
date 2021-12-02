@@ -1,48 +1,66 @@
 
 
-<div fxLayout="column" style="height: 30vh;">
-    <div fxFlex="30" style="border: 1px solid;">
         <h1>Agencia</h1>
-    </div>
 
-    <div fxFlex="70">
-      <ul ngbNav #nav="ngbNav" class="nav-tabs" >
-        <li ngbNavItem  >
-          <a  ngbNavLink (click)="showNavContent()" style="border: 2px solid;">First</a>
+      <ul ngbNav #nav="ngbNav" class="nav-pills">
+        <li ngbNavItem>
+          <a  ngbNavLink (click)="showNavContent()" >Autos 0km</a>
 
           <ng-template ngbNavContent >
-         
-          <div fxLayout="row">
-        <button class="btn btn-success" routerLink="contact-us"> contact-us</button>
-        <button class="btn btn-success" routerLink="/auth/login"> auth-login</button>
-        <button class="btn btn-success" routerLink="/home">to Home</button>
-        <button class="btn btn-success" routerLink="/cars/used-car"> toUsedCar</button>
-            <!-- <div class="card" style="width: 18rem;">
-              <img src="../../../../assets/logo.png" width="5%" class="card-img-top" alt="...">
-                    </div>
-            <div class="card" style="width: 18rem;">
-              <img src="../../../../assets/logo.png" class="card-img-top" alt="...">
-            </div> -->
-          </div>
+        
+             <button class="btn btn-success" placement="bottom" ngbTooltip="Dejanos un msj" routerLink="./cars/zeromile"> Solicitá una cotización</button>
+             <button class="btn btn-danger" (click)="clicked = false" >X</button>
+        
+          </ng-template>
+     
+        </li>
+        <li ngbNavItem >
+          <a ngbNavLink  (click)="showNavContent()">Usados Seleccionados</a>
 
+          <ng-template ngbNavContent >
+            <button class="btn btn-success" routerLink="./cars/used-car"> Usados destacados</button>
+            
           </ng-template>
 
         </li>
-        <li ngbNavItem >
-          <a ngbNavLink  >Second</a>
-          <ng-template ngbNavContent >Second content</ng-template>
-        </li>
 
         <li ngbNavItem>
-          <a ngbNavLink (mouseenter)="showNavContent()" >Third</a>
-          <ng-template ngbNavContent >Third content</ng-template>
+          <a ngbNavLink (click)="showNavContent()">Servicios</a>
+          <ng-template ngbNavContent >
+            
+            <button class="btn btn-success" routerLink="./cars/car-wash"> Lavadero</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" routerLink="./cars/workshop"> Taller</button>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-danger" (click)="clicked = false" >X</button>
+
+       
+            
+          </ng-template>
+         
         </li>
+ 
         <li ngbNavItem>
-          <a ngbNavLink>Fourth</a>
-          <ng-template ngbNavContent >Fourth content</ng-template>
+          <a ngbNavLink (click)="showNavContent()">Tienda</a>
+          
+          <ng-template ngbNavContent >
+            <button class="btn btn-success" routerLink="./cars/shop"> Tienda</button>
+            
+
+          </ng-template>
         </li>
 
-  <!-- dropdown!! -->
+         
+        <li ngbNavItem>
+          <a ngbNavLink (click)="showNavContent()">Gestoria</a>
+          
+          <ng-template ngbNavContent  >
+                <button class="btn btn-success" routerLink="./cars/formalities">Servicios de Gestoria</button>
+                <button class="btn btn-danger" (click)="clicked = false" >X</button>
+          </ng-template>
+        </li>
+
+
 
 <!-- 
       <li ngbDropdown class="nav-item">
@@ -59,7 +77,4 @@
     </ul>
       <div [ngbNavOutlet]="nav" *ngIf="clicked"></div>
         
-    </div>
-    <app-slide-up></app-slide-up>
-</div>
 

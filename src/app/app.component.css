@@ -3,8 +3,8 @@
     width: 100vw;    
     display: flex;
     flex-direction: column;
-    /* padding-top: 1.5vw; */
-    /* margin: 2vw !important; */
+    padding-top: 1.5vw;
+    margin: 1vw !important;
     overflow: hidden; 
     
 }

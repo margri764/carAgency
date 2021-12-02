@@ -37,7 +37,8 @@ import { SharedRoutingModule } from './shared-routing.module';
     FooterComponent,
     HomeComponent,
     ContactUsComponent,
-    Page404Component
+    Page404Component,
+    SlideUpComponent
 
   ]
 })

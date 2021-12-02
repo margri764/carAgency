@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+
+html, body { height: 100%; }
+body { 
+    margin: 0px;  
+    overflow: hidden; 
+    /* background-color: rgb(53, 53, 53); */
+
+ }
