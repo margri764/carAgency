@@ -8,6 +8,7 @@ import { WorkshopComponent } from './pages/workshop/workshop/workshop.component'
 import { ShopComponent } from './pages/shop/shop/shop.component';
 import { FormalitiesComponent } from './pages/formalities/formalities/formalities.component';
 import { FormComponent } from './pages/form/form/form.component';
+import { CarsComponent } from './pages/zeromile/cars/cars.component';
 
 const routes : Routes = [
   {
@@ -20,6 +21,8 @@ const routes : Routes = [
     { path: 'shop', component: ShopComponent },
     { path: 'formalities', component: FormalitiesComponent },
     { path: 'form', component: FormComponent },
+    { path: 'cars', component: CarsComponent },
+
 
 
 

@@ -1,0 +1,31 @@
+
+<div fxLayout="row wrap" 
+fxLayout.xs="column"       	
+fxLayoutAlign="center"        
+fxLayoutGap="0px"   		
+>
+
+<div fxFlex="100"    		
+  
+    *ngFor="let car of arrayCars">
+
+
+
+    <div class="card mb-3" style="border: 0px;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <img [src]="car.img" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a class="btn btn-primary" ngbTooltip="{{car.name}}" (click)="next()">Selecciona</a>
+            <a class="btn btn-primary" (click)="previous()">Volver</a>
+            <p class="card-text"><small class="text-muted">{{date}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

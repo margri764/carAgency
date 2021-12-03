@@ -10,6 +10,8 @@ import { FormalitiesComponent } from './pages/formalities/formalities/formalitie
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form/form.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CarsComponent } from './pages/zeromile/cars/cars.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -21,13 +23,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     WorkshopComponent,
     ShopComponent,
     FormalitiesComponent,
-    FormComponent
+    FormComponent,
+    CarsComponent
   ],
   imports: [
     CommonModule,
     CarsRoutingModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgbModule
+
+
+    
     
   ],
   exports:[

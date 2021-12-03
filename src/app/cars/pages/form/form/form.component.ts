@@ -55,9 +55,7 @@ export class FormComponent implements OnInit, AfterViewChecked {
 
     
   validField( field: string ) {
-    this.test(field);
-
-  
+    this.test(field);  
     return this.myForm.controls[field].errors 
             && this.myForm.controls[field].touched;
   }
@@ -75,8 +73,7 @@ export class FormComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
   }
 
-  ngAfterViewChecked()
-{
+  ngAfterViewChecked() {
   this.invalidName;
   this.invalidPhone;
   this.invalidEmail;

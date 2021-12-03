@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Stepper from 'bs-stepper';
 import { ValidatorService } from 'src/app/services/validator.service';
@@ -8,16 +8,17 @@ import { ValidatorService } from 'src/app/services/validator.service';
   templateUrl: './zeromile.component.html',
   styleUrls: ['./zeromile.component.css']
 })
-export class ZeromileComponent implements OnInit, AfterViewInit {
+export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
 
-  // myForm:FormGroup = this.fb.group({
-  //   name:    ['',[Validators.required]],
-  //   phone:   ['',Validators.required],
-  //   email:   ['',[Validators.required, Validators.pattern( this.validatorservice.emailPattern)]],
-  //   message :['']
-  //   });
-    
+  public navbarOpen!:boolean;
+  triggerNext : string = "";
+  triggerPrevious : string = "false";
+  public carSelection : string= '';
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
 
   @ViewChild('bsStepper', { static: false }) stepperElement!: ElementRef<any>;
 
@@ -25,7 +26,7 @@ export class ZeromileComponent implements OnInit, AfterViewInit {
 
 
   constructor( private fb : FormBuilder,
-                // private validatorservice : ValidatorService 
+               private cdRef:ChangeDetectorRef
                 ) { }
 
   next() {
@@ -37,15 +38,20 @@ export class ZeromileComponent implements OnInit, AfterViewInit {
   }
 
   
-  // onSubmit() {
-  //   console.log(this.myForm.value)
-  // }
-  
-  // validField( field: string ) {
+  ngAfterViewChecked() {
+    this.cdRef.detectChanges();
+    if(this.triggerNext == "true"){
+      this.next()
+      this.triggerNext = "false";
+      return;
+    };
+    if(this.triggerPrevious == "true"){
+      this.previous();
+      this.triggerPrevious = "false"
+      return;
+    }
+  }  
 
-  //   return this.myForm.controls[field].errors 
-  //           && this.myForm.controls[field].touched;
-  // }
 
   
   ngOnInit() {}
@@ -56,5 +62,10 @@ export class ZeromileComponent implements OnInit, AfterViewInit {
       animation: true
     });
 
+  }
+
+  goTo( selection : string){
+    this.carSelection = selection;
+    alert('Seleccionaste: '+ selection)
   }
 }

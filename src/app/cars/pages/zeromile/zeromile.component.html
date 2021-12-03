@@ -35,35 +35,45 @@
        <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
 
         <div fxLayout="row wrap" >
-        <div fxLayoutAlign="space-evenly center" fxLayout="row wrap" fxLayoutGap="30px" >
-          <img fxFlex="20"  src="../../../../assets/logo_chevrolet.png" id="chevrolet">
-          <img fxFlex="20"  src="../../../../assets/logo_ford.png" id="ford" >
-          <img fxFlex="20"  src="../../../../assets/logo_fiat.png" id="fiat">
-          <img fxFlex="20"  src="../../../../assets/logo_renault.png" id="renault" >
-          <img fxFlex="20"  src="../../../../assets/logo_volkswagen.png" id="vw" >
-          <img fxFlex="20"  src="../../../../assets/logo_nissan.png" id="nissan" >
-          <img fxFlex="20"  src="../../../../assets/logo_peugeot.png" id="peugeot" >
-          <img fxFlex="20"  src="../../../../assets/logo_jeep.png" id="jeep" >
+        <div fxLayoutAlign="space-evenly center" fxLayout="row wrap" fxLayoutGap="40px" >
 
-
-
-
-
+          <img fxFlex="20" (click)="goTo('chevrolet')"  ngbTooltip="selecciona chevrolet" src="../../../../assets/logo_chevrolet.png" id="chevrolet">
+          <img fxFlex="20" (click)="goTo('ford')" src="../../../../assets/logo_ford.png" id="ford" >
+          <img fxFlex="20" (click)="goTo('fiat')" src="../../../../assets/logo_fiat.png" id="fiat">
+          <img fxFlex="20" (click)="goTo('renault')" src="../../../../assets/logo_renault.png" id="renault" >
+          <img fxFlex="20" (click)="goTo('vw')" src="../../../../assets/logo_volkswagen.png" id="vw" >
+          <img fxFlex="20" (click)="goTo('nissan')" src="../../../../assets/logo_nissan.png" id="nissan" >
+          <img fxFlex="20" (click)="goTo('peugeot')" src="../../../../assets/logo_peugeot.png" id="peugeot" >
+          <img fxFlex="20" (click)="goTo('jeep')" src="../../../../assets/logo_jeep.png" id="jeep" >
+          <img fxFlex="20" (click)="goTo('toyota')" src="../../../../assets/log.png" id="toyota" >
+        
         </div>
         <br><br><br><br>
       </div>
-           <button type="button" class="" (click)="next()" id="next">Next</button>
+
+           <a type="button" class="" (click)="next()" id="next">Next</a>
         
-          <!-- <span> <i class="fa-solid fa-angles-right"></i> </span> -->
       </div>
        <!-- end 1 -->
 
        <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">        
         
-       <h1>elige el modelo </h1>
-       <button class="btn btn-primary" (click)="previous()">Previous</button>
-       <button class="btn btn-primary" (click)="next()">Next</button>
+   
+       
+  
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" (click)="toggleNavbar()">
+      Button with data-bs-target
+    </button>
+  
+  <div class="collapse" id="collapseExample"  [ngClass]="{ 'show': navbarOpen}">
 
+  </div> -->
+  <app-cars (triggerToNext)="triggerNext = $event" 
+            (triggerToPrevious)="triggerPrevious = $event"
+            [carSelection]="carSelection" >
+  </app-cars>
+
+    
       </div>   
      
     <!-- end 2 -->

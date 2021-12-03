@@ -1,7 +1,13 @@
+img{
+    cursor: pointer;
+}
 
+#chevrolet{
+    /* transform: scale(0.5); */
+}
 
 #ford{
-    height: 24%;
+    /* transform: scale(); */
 }
 
 #fiat{
