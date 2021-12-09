@@ -3,7 +3,7 @@
 
 @import '~bs-stepper/dist/css/bs-stepper.min.css';
 
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { 
     margin: 0px;  
     overflow: hidden; 

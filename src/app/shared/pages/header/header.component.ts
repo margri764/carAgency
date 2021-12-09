@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsedCarComponent } from 'src/app/cars/pages/used-car/used-car.component';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,14 @@ export class HeaderComponent implements OnInit {
 
   clicked: boolean= false;
   disabled = true;
+  active = 0;
+
 
   constructor(
-              private router : Router,
-              public route : ActivatedRoute
-  ) { }
+              public router : Router,
+              public route : ActivatedRoute,
+
+  ) {  }
 
 
 
@@ -24,13 +28,15 @@ showNavContent( ){
 }
 
 
-go(){
-  this.router.navigateByUrl('./contact-us');
-  console.log('fg')
-
+goTo(){
+  this.router.navigateByUrl('home');
 }
 
+
+
   ngOnInit(): void {
+
+  
   }
 
 }

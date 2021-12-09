@@ -16,7 +16,8 @@ export class CarsComponent implements OnInit, AfterViewChecked  {
 
   @Output()  triggerToNext= new EventEmitter<string>();
   @Output()  triggerToPrevious= new EventEmitter<string>();
-  @Input() carSelection= '';
+  @Input() brandSelection= '';
+  @Input() modelSelection= '';
 
 
   constructor(
@@ -35,15 +36,24 @@ export class CarsComponent implements OnInit, AfterViewChecked  {
     this.triggerToPrevious.emit(this.triggerPrevious);
   }
 
-  carsFromBackend(){
-    this.arrayCars = this.zeromileCarsservice.getZeroCars(this.carSelection);
+  brandFromBackend(){
+    this.arrayCars = this.zeromileCarsservice.getBrandCars(this.brandSelection);
+  };
+
+  modelFromBackend(){
+    this.arrayCars = this.zeromileCarsservice.getModelCars(this.modelSelection);
   }
 
   ngAfterViewChecked() {
     this.cdRef.detectChanges();
-    if(this.carSelection){
-      this.carsFromBackend();
-      this.carSelection='';
+    if(this.brandSelection){
+      this.brandFromBackend();
+      this.brandSelection='';
+    };
+
+    if(this.modelSelection){
+      this.modelFromBackend();
+      this.modelSelection='';
     };
 
     }

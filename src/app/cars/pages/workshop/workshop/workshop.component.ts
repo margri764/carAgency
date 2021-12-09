@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-workshop',
@@ -7,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkshopComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+              private myElement : ElementRef
+  ) { }
 
 
 
   ngOnInit(): void {
   }
 
+  goToElement() {
+    let el = this.myElement.nativeElement.querySelector('.test');
+    el.scrollIntoView({behavior:"smooth"});
+  }
 
 }

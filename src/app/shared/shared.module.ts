@@ -23,14 +23,15 @@ import { SharedRoutingModule } from './shared-routing.module';
     ContactUsComponent,
     NavbarComponent,
     SlideUpComponent,
-    Page404Component
+    Page404Component,
+    
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   exports:[
     HeaderComponent,
@@ -39,7 +40,6 @@ import { SharedRoutingModule } from './shared-routing.module';
     ContactUsComponent,
     Page404Component,
     SlideUpComponent
-
-  ]
+  ],
 })
 export class SharedModule { }

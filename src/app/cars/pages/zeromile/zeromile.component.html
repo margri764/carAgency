@@ -1,5 +1,5 @@
 <br><br>
- <div class="container flex-grow-1 flex-shrink-0 py-0">
+ <div class="container flex-grow-1 flex-shrink-0 py-0" >
   <div class="mb-0 p-4 bg-white shadow-sm">
 
 
@@ -12,15 +12,15 @@
        </button>
      </div>
      <div class="bs-stepper-line"></div>
-     <div class="step" data-target="#test-l-2">
-       <button type="button" class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2">
+     <div class="step" data-target="#test-l-2" >
+       <button type="button" [disabled]="disabledBrand"  class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2">
          <span class="bs-stepper-circle">2</span>
          <span class="bs-stepper-label">Elegi tu modelo</span>
        </button>
      </div>
      <div class="bs-stepper-line"></div>
      <div class="step" data-target="#test-l-3">
-       <button type="button" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3">
+       <button type="button" [disabled]="disabledModel" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3">
          <span class="bs-stepper-circle">3</span>
          <span class="bs-stepper-label">Tus datos</span>
        </button>
@@ -37,21 +37,21 @@
         <div fxLayout="row wrap" >
         <div fxLayoutAlign="space-evenly center" fxLayout="row wrap" fxLayoutGap="40px" >
 
-          <img fxFlex="20" (click)="goTo('chevrolet')"  ngbTooltip="selecciona chevrolet" src="../../../../assets/logo_chevrolet.png" id="chevrolet">
-          <img fxFlex="20" (click)="goTo('ford')" src="../../../../assets/logo_ford.png" id="ford" >
-          <img fxFlex="20" (click)="goTo('fiat')" src="../../../../assets/logo_fiat.png" id="fiat">
-          <img fxFlex="20" (click)="goTo('renault')" src="../../../../assets/logo_renault.png" id="renault" >
-          <img fxFlex="20" (click)="goTo('vw')" src="../../../../assets/logo_volkswagen.png" id="vw" >
-          <img fxFlex="20" (click)="goTo('nissan')" src="../../../../assets/logo_nissan.png" id="nissan" >
-          <img fxFlex="20" (click)="goTo('peugeot')" src="../../../../assets/logo_peugeot.png" id="peugeot" >
-          <img fxFlex="20" (click)="goTo('jeep')" src="../../../../assets/logo_jeep.png" id="jeep" >
-          <img fxFlex="20" (click)="goTo('toyota')" src="../../../../assets/log.png" id="toyota" >
+          <img fxFlex="20" (click)="goToBrand('chevrolet');next()" src="../../../../assets/logo_chevrolet.png" id="chevrolet">
+          <img fxFlex="20" (click)="goToBrand('ford');next()" src="../../../../assets/logo_ford.png" id="ford" >
+          <img fxFlex="20" (click)="goToBrand('fiat');next()" src="../../../../assets/logo_fiat.png" id="fiat">
+          <img fxFlex="20" (click)="goToBrand('renault');next()" src="../../../../assets/logo_renault.png" id="renault" >
+          <img fxFlex="20" (click)="goToBrand('vw');next()" src="../../../../assets/logo_volkswagen.png" id="vw" >
+          <img fxFlex="20" (click)="goToBrand('nissan');next()" src="../../../../assets/logo_nissan.png" id="nissan" >
+          <img fxFlex="20" (click)="goToBrand('peugeot');next()" src="../../../../assets/logo_peugeot.png" id="peugeot" >
+          <img fxFlex="20" (click)="goToBrand('jeep');next()" src="../../../../assets/logo_jeep.png" id="jeep" >
+          <img fxFlex="20" (click)="goToBrand('toyota');next()" src="../../../../assets/log.png" id="toyota" >
         
         </div>
         <br><br><br><br>
       </div>
 
-           <a type="button" class="" (click)="next()" id="next">Next</a>
+          
         
       </div>
        <!-- end 1 -->
@@ -59,8 +59,14 @@
        <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">        
         
    
-       
-  
+       <div fxLayout="row" fxLayoutAlign="center space-evenly">
+
+          <span fxFlex="25" (click)="goToModel('car')">Autos</span>
+          <span fxFlex="25" (click)="goToModel('suv')">SUVs</span>
+          <span fxFlex="25" (click)="goToModel('pickups')">Pick Ups</span>
+          <span fxFlex="25" (click)="goToModel('sports')">Deportivos</span>
+       </div>
+  <br><br>
     <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" (click)="toggleNavbar()">
       Button with data-bs-target
     </button>
@@ -70,7 +76,8 @@
   </div> -->
   <app-cars (triggerToNext)="triggerNext = $event" 
             (triggerToPrevious)="triggerPrevious = $event"
-            [carSelection]="carSelection" >
+            [brandSelection]="brandSelection"
+            [modelSelection]="modelSelection"  >
   </app-cars>
 
     

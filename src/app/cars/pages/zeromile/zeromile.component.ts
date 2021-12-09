@@ -1,7 +1,6 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Stepper from 'bs-stepper';
-import { ValidatorService } from 'src/app/services/validator.service';
+
 
 @Component({
   selector: 'app-zeromile',
@@ -14,7 +13,12 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
   public navbarOpen!:boolean;
   triggerNext : string = "";
   triggerPrevious : string = "false";
-  public carSelection : string= '';
+  public brandSelection : string= '';
+  public modelSelection : string= '';
+  public disabledBrand : boolean = true;
+  public disabledModel : boolean = true;
+  public stepper!: Stepper;
+
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
@@ -22,11 +26,10 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   @ViewChild('bsStepper', { static: false }) stepperElement!: ElementRef<any>;
 
-  public stepper!: Stepper;
 
 
-  constructor( private fb : FormBuilder,
-               private cdRef:ChangeDetectorRef
+  constructor( 
+               private cdRef:ChangeDetectorRef,
                 ) { }
 
   next() {
@@ -37,24 +40,33 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
     this.stepper.previous();
   }
 
-  
+
   ngAfterViewChecked() {
-    this.cdRef.detectChanges();
+
     if(this.triggerNext == "true"){
       this.next()
       this.triggerNext = "false";
-      return;
     };
     if(this.triggerPrevious == "true"){
       this.previous();
       this.triggerPrevious = "false"
-      return;
-    }
+    };
+ 
+    if(this.brandSelection != ''){
+      this.disabledBrand = false
+    };
+    if(this.modelSelection != ''){
+      this.disabledModel = false;
+    };
+    this.cdRef.detectChanges();
+
   }  
 
 
   
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   ngAfterViewInit() {
     this.stepper = new Stepper(this.stepperElement.nativeElement, {
@@ -62,10 +74,14 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
       animation: true
     });
 
+
   }
 
-  goTo( selection : string){
-    this.carSelection = selection;
-    alert('Seleccionaste: '+ selection)
+  goToBrand( brandSelect : string){
+    this.brandSelection = brandSelect;
+  }
+
+  goToModel( modelSelect : string){
+    this.modelSelection = modelSelect;
   }
 }

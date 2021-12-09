@@ -1,15 +1,16 @@
 
 
-        <h1>Agencia</h1>
+        <h1 class="animate__animated animate__fadeIn text-center" style="height: 150px;">Agencia</h1>
 
-      <ul ngbNav #nav="ngbNav" class="nav-pills">
-        <li ngbNavItem>
-          <a  ngbNavLink (click)="showNavContent()" >Autos 0km</a>
+      <ul ngbNav #nav="ngbNav" class="nav-pills" [(activeId)]="active" >
+
+        <li ngbNavItem >
+          <a  ngbNavLink (click)="showNavContent()" #ngbNavLink >Autos 0km</a>
 
           <ng-template ngbNavContent >
         
-             <button class="btn btn-success" placement="bottom" ngbTooltip="Dejanos un msj" routerLink="./cars/zeromile"> Solicitá una cotización</button>
-             <button class="btn btn-danger" (click)="clicked = false" >X</button>
+             <button class="btn btn-success" (click)="clicked = false;" placement="bottom" ngbTooltip="Dejanos un msj" routerLink="./cars/zeromile"> Solicitá una cotización</button>
+             <button class="btn btn-danger" (click)="clicked = false; goTo()" >X</button>
         
           </ng-template>
      
@@ -18,7 +19,7 @@
           <a ngbNavLink  (click)="showNavContent()">Usados Seleccionados</a>
 
           <ng-template ngbNavContent >
-            <button class="btn btn-success" routerLink="./cars/used-car"> Usados destacados</button>
+            <button class="btn btn-success" routerLink="./cars/used-car" (click)="clicked = false;" > Usados destacados</button>
             
           </ng-template>
 
@@ -75,6 +76,5 @@
       </li> -->
   
     </ul>
-      <div [ngbNavOutlet]="nav" *ngIf="clicked"></div>
+      <div class="animate__animated animate__fadeIn" [ngbNavOutlet]="nav" *ngIf="clicked"></div>
         
-

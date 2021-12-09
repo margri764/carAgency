@@ -2,8 +2,17 @@ img{
     cursor: pointer;
 }
 
-#chevrolet{
-    /* transform: scale(0.5); */
+span{
+    cursor: pointer;
+}
+
+span:hover{
+    color: blue;
+    font-weight: bold;
+}
+
+#chevrolet:hover{
+    transform: scale(1.1);
 }
 
 #ford{
