@@ -1,31 +1,40 @@
-import { Component, OnInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewChecked, Input, AfterViewInit, DoCheck } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ZeromileCarsService } from 'src/app/cars/services/zeromile-cars.service';
 import { ValidatorService } from 'src/app/services/validator.service';
 
 @Component({
   selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit, AfterViewChecked {
 
-  public invalidName: boolean= false;
-  public invalidPhone: boolean= false;
-  public invalidEmail: boolean= false;
+  public invalidName:  boolean  = false;
+  public invalidPhone: boolean = false;
+  public invalidEmail: boolean = false;
 
+  @Input() modelSelection! : string;
 
+  public car : string = '';
+  
+ 
   myForm:FormGroup = this.fb.group({
-    name:    ['',[Validators.required]],
+    name:    ['',Validators.required],
     phone:   ['',Validators.required],
     email:   ['',[Validators.required, Validators.pattern( this.validatorservice.emailPattern)]],
-    });
+    car:     ['']
+  });
 
     constructor(
               private validatorservice : ValidatorService,
+              private zeromileCarservice : ZeromileCarsService,
               private fb : FormBuilder,
               private cdRef:ChangeDetectorRef
       
-    ) { }
+              ) { }
+
+ 
 
     test(field: string){
 
@@ -65,13 +74,14 @@ export class FormComponent implements OnInit, AfterViewChecked {
       this.myForm.markAllAsTouched();
       return;
     }
-
-
-    // console.log(this.myForm.value)
+    console.log("this.car", this.zeromileCarservice.model)
+    this.myForm.controls['car'].setValue(this.modelSelection) 
+    console.log(this.myForm.value)
   }
 
   ngOnInit(): void {
   }
+ 
 
   ngAfterViewChecked() {
   this.invalidName;

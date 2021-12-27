@@ -11,10 +11,27 @@ export class UsedCarComponent implements OnInit, AfterViewInit {
 
   element : any;
   scrolled: boolean = false;
+  disabled = false;
+  public showCardOne : string = "block";
+  public showCardTwo : string = "none";
+
+
 
   constructor(      ) {
            }
 
+toggleNavbarOne() {
+ this.showCardTwo = "none";
+ (this.showCardOne == "none") ? this.showCardOne = "block" :  this.showCardOne = "block"
+
+}
+
+toggleNavbarTwo() {
+  this.showCardOne = "none";
+  (this.showCardTwo == "none") ? this.showCardTwo = "block" :  this.showCardTwo = "block"
+
+  }
+        
 
 
   ngAfterViewInit(): void {
@@ -24,7 +41,8 @@ export class UsedCarComponent implements OnInit, AfterViewInit {
     setTimeout( () => {
 
     this.element.scrollIntoView(
-      { alignToTop: true,
+      { 
+        alignToTop: true,
         behavior: "smooth",
         block: "center",
       });

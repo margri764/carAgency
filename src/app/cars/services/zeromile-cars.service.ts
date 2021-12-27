@@ -5,6 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class ZeromileCarsService {
 
+  carModel : string = '';
+
+  get model(){
+    return this.carModel;
+  }
+
   arrayChevroletCars = [
     {
       name: "Cruze",
@@ -129,5 +135,9 @@ export class ZeromileCarsService {
          default :return null;
   
      }
+    }
+    
+    getCarSelection(selectedModel:string){
+      this.carModel = selectedModel;
     }
 }

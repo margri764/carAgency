@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
-import { ZeromileComponent } from './pages/zeromile/zeromile.component';
+import { ZeromileComponent } from './pages/zeromile/zeromile/zeromile.component';
 import { CarsRoutingModule } from './cars-routing.module';
 import { UsedCarComponent } from './pages/used-car/used-car.component';
 import { CarWashComponent } from './pages/car-wash/car-wash/car-wash.component';
@@ -14,6 +14,8 @@ import { ShopComponent } from './pages/shop/shop/shop.component';
 import { FormalitiesComponent } from './pages/formalities/formalities/formalities.component';
 import { FormComponent } from './pages/form/form/form.component';
 import { CarsComponent } from './pages/zeromile/cars/cars.component';
+import { SlideUsedCarComponent } from './pages/slide-used-car/slide-used-car.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 
@@ -26,17 +28,17 @@ import { CarsComponent } from './pages/zeromile/cars/cars.component';
     ShopComponent,
     FormalitiesComponent,
     FormComponent,
-    CarsComponent
+    CarsComponent,
+    SlideUsedCarComponent
   ],
   imports: [
     CommonModule,
     CarsRoutingModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    NgbModule
-
-
-    
+    NgbModule,
+    IvyCarouselModule
+ 
     
   ],
   exports:[
@@ -45,9 +47,9 @@ import { CarsComponent } from './pages/zeromile/cars/cars.component';
     WorkshopComponent,
     CarWashComponent,
     ShopComponent,
-    FormalitiesComponent
-
-
-  ]
+    FormalitiesComponent,
+    FormComponent
+    ],
+  providers:[FormComponent]  
 })
 export class CarsModule { }

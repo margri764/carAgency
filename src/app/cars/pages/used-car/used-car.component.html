@@ -1,36 +1,73 @@
 
 
 
-<div  style="height: 100vh; margin-top: 10vh; border: 1px solid;" fxLayout="row" fxLayoutAlign="center center">
+<br><br>
+<div class="container">
+<div class="row"  #div id="mainFrame" >
 
-    <img class="test"  src="./assets/sw4Usado.png" fxFlex="60" alt="">
+  <div class="col-md-6 col-xl-6 col-12" >
 
+       <app-slide-used-car></app-slide-used-car>
     
+  </div>  
+
+  <div class="col-md-6 col-xl-6"  >
+
+     <div fxLayoutAlign="start" fxLayoutGap="10px" style="margin-left: 20px;">
+        <button class="btn btn-primary" type="button" (click)="toggleNavbarOne()">
+          General
+        </button>
+        <button class="btn btn-primary" type="button" (click)="toggleNavbarTwo()">
+          Equipamiento
+      </button>
+    </div> 
+ <br>
+    
+    <div fxFlexAlign="center center">
+      <div class=""  [ngStyle]="{'display': showCardOne}" >
+        <div class="card" style="border: 0px;">
+          <div class="card-body">
+            <h5 class="card-title">Ford Fiesta</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Ambient plus</h6>
+            <p  >Año <span style="margin-left: 28vw" > 2022</span></p> <hr>
+            <p >Km</p><hr>
+            <p >Combustible</p><hr>
+            <p >Precio de lista</p><hr>
+            <a routerLink="../../cars/form" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+
+       <div  [ngStyle]="{'display': showCardTwo}">
+        <div class="card" style="border: 0px;" >
+          <div class="card-body" fxLayout="column wrap" style="height: 400px;">
+            
+            <p ><li>Alarma</li></p>
+            <p ><li>Cierre centralizado</li></p>
+            <p ><li>Aire Acondicionado</li></p>
+            <p ><li>Direccion Asistida</li></p>
+            <p ><li>ABS</li></p>
+            <p ><li>Faros Antinieblas</li></p>
+            <p ><li>Doble Airbag</li></p>
+            <p ><li>Airbag cortina</li></p>
+            <p ><li>Computadora de a bordo</li></p>
+            <p ><li>Direccion asistida</li></p>
+            <p ><li>Alarma</li></p>
+            <p ><li>Cierre centralizado</li></p>
+            <p ><li>Aire Acondicionado</li></p>
+            <p ><li>Direccion Asistida</li></p>
+            <p ><li>ABS</li></p>
+   
+       
+          </div>
+        </div>
+      </div> 
+
+    </div>
+   </div> 
+</div>
 
 </div>
 
-<div #div style="height: 100vh; margin-top: 10vh; border: 1px solid;" fxLayout="row" fxLayoutAlign="center center">
 
-  <img class="test"  src="./assets/sw4Usado.png" fxFlex="60" alt="">
-
-  
-
-</div>
-<!-- <div> <button (click)="go()">go</button></div>
-
-
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eum placeat? Excepturi, nesciunt? Deleniti, modi ratione quod quas quo pariatur architecto laboriosam reprehenderit libero autem in, cumque at sed iste.</div>
-
-
-<div id="targetRed" style="background-color: red;  height: 100vh">
-  Scrolled to Red
-</div>
-
-<div  #elDiv style="background-color: green; height: 100vh;">
-    Scrolled to Greene
-  </div> -->

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ZeromileComponent } from './pages/zeromile/zeromile.component';
+import { ZeromileComponent } from './pages/zeromile/zeromile/zeromile.component';
 import { UsedCarComponent } from './pages/used-car/used-car.component';
 import { CarWashComponent } from './pages/car-wash/car-wash/car-wash.component';
 import { WorkshopComponent } from './pages/workshop/workshop/workshop.component';
@@ -21,7 +21,7 @@ const routes : Routes = [
     { path: 'shop', component: ShopComponent },
     { path: 'formalities', component: FormalitiesComponent },
     { path: 'form', component: FormComponent },
-    { path: 'cars', component: CarsComponent },
+    // { path: 'cars', component: CarsComponent },
 
 
 

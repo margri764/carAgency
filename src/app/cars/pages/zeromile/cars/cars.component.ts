@@ -1,5 +1,6 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ZeromileCarsService } from 'src/app/cars/services/zeromile-cars.service';
+import { FormComponent } from '../../form/form/form.component';
 
 @Component({
   selector: 'app-cars',
@@ -12,19 +13,22 @@ export class CarsComponent implements OnInit, AfterViewChecked  {
   public date = new Date();
   triggerNext : string = "true";
   triggerPrevious : string = "true";
+  
 
 
   @Output()  triggerToNext= new EventEmitter<string>();
   @Output()  triggerToPrevious= new EventEmitter<string>();
+  @Output()  modelSelect= new EventEmitter<string>();
+
   @Input() brandSelection= '';
   @Input() modelSelection= '';
 
 
   constructor(
               private zeromileCarsservice : ZeromileCarsService,
-              private cdRef:ChangeDetectorRef
+              private cdRef:ChangeDetectorRef,
+              public formcomponente : FormComponent
   ) {
-    // this.arrayCars = this.zeromileCarsservice.getZeroCars();
 
    }
 
@@ -56,6 +60,11 @@ export class CarsComponent implements OnInit, AfterViewChecked  {
       this.modelSelection='';
     };
 
+    }
+
+    selectedCar(carSelect: string){
+      this.modelSelect.emit(carSelect)
+      this.zeromileCarsservice.getCarSelection(carSelect);
     }
 
 

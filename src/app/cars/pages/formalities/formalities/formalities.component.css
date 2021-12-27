@@ -1,3 +1,29 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+h1{
+    font-family: 'poppins';
+}
+hr {
+    height: 6px;
+    background-color: rgb(75, 248, 32);
+    width: 50%;
+  }
+
+span{
+    font-size: 100px;
+    color: rgb(38, 102, 221);
+}
+
+label{
+    font-size: 1.6vw;
+    font-family: 'poppins', 'sans-serif';
+    color: rgb(63, 62, 62);
+}
+
+
+
 @media only screen and (max-width: 574px  )  {
 
 }

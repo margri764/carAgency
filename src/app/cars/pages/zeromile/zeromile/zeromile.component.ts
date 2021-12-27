@@ -18,6 +18,8 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
   public disabledBrand : boolean = true;
   public disabledModel : boolean = true;
   public stepper!: Stepper;
+  public element : any;
+  public carSelect : string='';
 
 
   toggleNavbar() {
@@ -25,6 +27,8 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   @ViewChild('bsStepper', { static: false }) stepperElement!: ElementRef<any>;
+  @ViewChild('container', { static: false }) container!: ElementRef;
+
 
 
 
@@ -69,10 +73,22 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   ngAfterViewInit() {
+
     this.stepper = new Stepper(this.stepperElement.nativeElement, {
       linear: false,
       animation: true
     });
+    
+    this.element = this.container.nativeElement;
+
+    setTimeout( () => {
+
+      this.element.scrollIntoView(
+        { alignToTop: true,
+          behavior: "smooth",
+          block: "center",
+        });
+        }, 0);
 
 
   }

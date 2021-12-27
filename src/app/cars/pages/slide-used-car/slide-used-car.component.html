@@ -1,0 +1,22 @@
+
+
+  <div id="mainImg">
+    <img fxFlex="100" id="testImgMove" [src]="img1" alt="">
+  </div>
+
+  <div >
+    <carousel 
+      [cellWidth]="'100%'" 
+      [cellsToShow]="2"
+      arrowsTheme="dark"  
+      [height]="value"    
+    >
+      
+      <!-- [cellsToScroll]="3" -->
+      <div class="carousel-cell"> <img   [src]="img2" (click)="goToMainImg('img2')"></div>
+      <div class="carousel-cell"> <img   [src]="img3" (click)="goToMainImg('img3')"></div>
+      <div class="carousel-cell"> <img   [src]="img4" (click)="goToMainImg('img4')"></div>
+      <div class="carousel-cell"> <img   [src]="img5" (click)="goToMainImg('img5')"></div>
+    </carousel>
+  </div>
+
