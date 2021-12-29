@@ -1,7 +1,34 @@
 
 
-        <h1 class="animate__animated animate__fadeIn text-center" style="height: 150px;">Agencia</h1>
+<div fxLayoutAlign="space-between end" class="logo animate__animated animate__fadeIn" fxLayout="row" style="height: 300px; width: 100%;">
 
+ 
+<div class="social animate__animated animate__backInLeft " style="margin-left: 10px;" fxLayoutAlign="center end">
+    <a  target="_blank" title="whatsapp" href="https://wa.me/+542302416035?text=Hola!!%20" > 
+        <span id="whatsapp"><i class="fab fa-whatsapp"></i></span>
+    </a>
+
+    <a target="_blank" title="Facebook" href="https://www.facebook.com/Dulce-Alma-Deco-355907414565508" >
+        <span id="facebook"><i class="fab fa-facebook"></i></span>
+    </a>
+
+    <a >
+    <span class="text-center" id="search"> <i class="fas fa-search-location"></i> </span>
+    <span class="address">2 de Marzo 1035</span>
+  </a>
+    
+    <!-- <div class="fb-like" data-href="https://www.facebook.com/ Dulce-Alma-Deco-355907414565508"data-layout="button" data-action="like" data-size="small" data-share="false">
+    </div>      -->
+</div>  
+
+<div class="mail animate__animated animate__backInUp" style="margin-right: 10px; "> <a href="mailto:margri764@gmail.com">barrozoautomotores@gmail.com</a></div>
+
+
+</div>
+
+<br>
+
+<div>
       <ul ngbNav #nav="ngbNav" class="nav-pills" [(activeId)]="active" >
 
         <li ngbNavItem >
@@ -9,8 +36,8 @@
 
           <ng-template ngbNavContent >
         
-             <button class="btn btn-success" (click)="clicked = false;" placement="bottom" ngbTooltip="Dejanos un msj" routerLink="./cars/zeromile"> Solicitá una cotización</button>
-             <button class="btn btn-danger" (click)="clicked = false; goTo()" >X</button>
+             <button class="btn" id="link" (click)="clicked = false;" placement="bottom" ngbTooltip="Dejanos un msj" routerLink="./cars/zeromile"> Solicitá una cotización</button>
+             <button class="btn btn-danger" id="close" (click)="clicked = false; goTo()" >X</button>
         
           </ng-template>
      
@@ -19,7 +46,7 @@
           <a ngbNavLink  (click)="showNavContent()">Usados Seleccionados</a>
 
           <ng-template ngbNavContent >
-            <button class="btn btn-success" routerLink="./cars/used-car" (click)="clicked = false;" > Usados destacados</button>
+            <button class="btn" id="link" routerLink="./cars/used-car" (click)="clicked = false;" > Usados destacados</button>
             
           </ng-template>
 
@@ -29,10 +56,14 @@
           <a ngbNavLink (click)="showNavContent()">Servicios</a>
           <ng-template ngbNavContent >
             
-            <button class="btn btn-success" routerLink="./cars/car-wash"> Lavadero</button>
+            <button class="btn" id="link" routerLink="./cars/car-wash"> Lavadero</button>
+            
             &nbsp;&nbsp;&nbsp;
-            <button class="btn btn-success" routerLink="./cars/workshop"> Taller</button>
+
+            <button class="btn" id="link" routerLink="./cars/workshop"> Taller</button>
+            
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            
             <button class="btn btn-danger" (click)="clicked = false" >X</button>
 
        
@@ -45,7 +76,7 @@
           <a ngbNavLink (click)="showNavContent()">Tienda</a>
           
           <ng-template ngbNavContent >
-            <button class="btn btn-success" routerLink="./cars/shop"> Tienda</button>
+            <button class="btn" id="link" routerLink="./cars/shop"> Tienda</button>
             
 
           </ng-template>
@@ -56,10 +87,14 @@
           <a ngbNavLink (click)="showNavContent()">Gestoria</a>
           
           <ng-template ngbNavContent  >
-                <button class="btn btn-success" routerLink="./cars/formalities">Servicios de Gestoria</button>
+                <button class="btn" id="link" routerLink="./cars/formalities">Servicios de Gestoria</button>
                 <button class="btn btn-danger" (click)="clicked = false" >X</button>
           </ng-template>
         </li>
+
+        <li ngbNavItem>
+          <a ngbNavLink (click)="showNavContent()" routerLink="contact-us"> Contacto </a>
+         </li>
 
 
 
@@ -78,3 +113,4 @@
     </ul>
       <div class="animate__animated animate__fadeIn" [ngbNavOutlet]="nav" *ngIf="clicked"></div>
         
+    </div>

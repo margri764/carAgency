@@ -12,7 +12,8 @@
      
 
             <app-header></app-header>
-            <app-slide-up></app-slide-up>
+
+            <app-slide-up *ngIf="!(router.url === '/contact-us')"></app-slide-up>
           
         
            <router-outlet> </router-outlet> 

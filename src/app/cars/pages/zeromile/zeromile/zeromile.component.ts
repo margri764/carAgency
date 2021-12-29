@@ -27,7 +27,7 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   @ViewChild('bsStepper', { static: false }) stepperElement!: ElementRef<any>;
-  @ViewChild('container', { static: false }) container!: ElementRef;
+  @ViewChild('target', { static: false }) target!: ElementRef;
 
 
 
@@ -79,14 +79,14 @@ export class ZeromileComponent implements OnInit, AfterViewInit, AfterViewChecke
       animation: true
     });
     
-    this.element = this.container.nativeElement;
+    this.element = this.target.nativeElement;
 
     setTimeout( () => {
 
       this.element.scrollIntoView(
         { alignToTop: true,
           behavior: "smooth",
-          block: "center",
+          block: "start",
         });
         }, 0);
 

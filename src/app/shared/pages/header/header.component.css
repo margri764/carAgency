@@ -2,26 +2,92 @@
  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 
- .animate__animated.animate__fadeIn {
-    --animate-duration: 3s;
-  }
-  
-
- a{
-    font-family: 'poppins', 'sans-serif';
-    font-size: 1vw;
-    color: #FF6F91;
+.animate__animated.animate__fadeIn {
+--animate-duration: 2s;
 }
 
+.mail a {
+--animate-duration: 2s;
+text-decoration: none;
+color: white;
+font-weight: bold;
+transition: all 1s 0s ease;
+}
+
+.mail a:hover{
+  color: aqua;
+}
+
+.address{
+    font-weight: bold;
+    color: white;
+    font-size: 2vw;
+}
+
+.social{
+    --animate-duration: 1s;
+     }
+  
+span#search{
+    color: white;
+    font-size: 2.7vw;
+    margin: 1vw;
+    
+
+}
+
+.logo{
+    background-image: url("../../../../assets/agency-logo7.png");
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
 
 .nav-pills{
     box-shadow: 4px 4px 10px rgb(150, 148, 148);
 }
 
-button{
+#link{
+    color: rgb(38, 102, 221);
     margin-bottom: 20px;
     margin-top: 20px;
+    font-size: 2.5vw;
+    transition: all 0.6s ease 0.1s; 
 }
+
+#link:hover{
+    transform: scale(1.02);
+    color: rgb(32, 91, 201);
+}
+
+#close{
+    border-radius: 20px;    
+}
+
+span#facebook{
+font-size: 2.7vw;
+color:rgb(15, 159, 255);
+margin: 1vw;
+transition: all 1s 0s ease;
+
+
+}
+
+span#facebook:hover{
+color:aliceblue;
+}
+  
+span#whatsapp {
+  margin: 1vw;
+  font-size: 3vw;
+  color:rgb(0, 151, 8);
+  transition: all 1s 0s ease;
+}
+  
+span#whatsapp:hover {
+ color:aliceblue;
+}
+
 
 
 @media only screen and (max-width: 574px  )  {
@@ -35,11 +101,32 @@ button{
         line-height: 5vw;
     }
 
+    b{
+        font-size: 4vw;
+    }
+
     button{
         margin-bottom: 10px;
         margin-top: 10px;
         font-size: 2.5vw;    
     }
+    
+    span#whatsapp{
+        font-size: 8vw;
+    }
+
+    span#facebook{
+    font-size: 8vw;
+    color:rgb(194, 194, 190);
+    margin: 1vw;     
+    }
+
+    span#instagram{
+    font-size: 8vw;
+    color:rgb(194, 194, 190);
+    margin: 1vw;
+    }
+  
 
  
 }

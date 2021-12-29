@@ -32,13 +32,13 @@ export class SlideUsedCarComponent implements OnInit {
 
 
 
-images = [
-  {path: '/assets/cruze.png'},
-  {path: '/assets/cruze2.png'},
-  {path: '/assets/s10.png'},
-  {path: '/assets/s10Doble.png'},
+// images = [
+//   {path: '/assets/cruze.png'},
+//   {path: '/assets/cruze2.png'},
+//   {path: '/assets/s10.png'},
+//   {path: '/assets/s10Doble.png'},
 
-];   
+// ];   
 
 
   constructor() {

@@ -12,8 +12,9 @@ hr {
   }
 
 span{
-    font-size: 100px;
+    font-size: 10vw;
     color: rgb(38, 102, 221);
+    transition: all 1s 0s ease;
 }
 
 label{
@@ -22,9 +23,28 @@ label{
     color: rgb(63, 62, 62);
 }
 
+/* .containIcon{
+    overflow: hidden;   
+} */
+
+.containIcon:hover span{
+    -webkit-transform:scale(1.15);
+    transform:scale(1.15);
+    cursor: pointer;
+}
+
+
 
 
 @media only screen and (max-width: 574px  )  {
+
+    label{
+        font-size: 6vw;
+    }
+
+    span{
+        font-size: 65vw;
+    }
 
 }
 

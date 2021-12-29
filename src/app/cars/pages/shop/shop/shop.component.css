@@ -1,4 +1,10 @@
 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+h3{
+    font-family: 'poppins';
+}
 
 
 @media only screen and (max-width: 574px  )  {
