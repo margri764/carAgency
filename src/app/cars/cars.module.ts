@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -16,6 +16,7 @@ import { FormComponent } from './pages/form/form/form.component';
 import { CarsComponent } from './pages/zeromile/cars/cars.component';
 import { SlideUsedCarComponent } from './pages/slide-used-car/slide-used-car.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -29,7 +30,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     FormalitiesComponent,
     FormComponent,
     CarsComponent,
-    SlideUsedCarComponent
+    SlideUsedCarComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +38,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     ReactiveFormsModule,
     FlexLayoutModule,
     NgbModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FormsModule,
+    SharedModule
  
     
   ],

@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlideUpComponent } from './pages/slide-up/slide-up.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { SharedRoutingModule } from './shared-routing.module';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -24,6 +25,7 @@ import { SharedRoutingModule } from './shared-routing.module';
     NavbarComponent,
     SlideUpComponent,
     Page404Component,
+    LoginComponent
     
   ],
   imports: [
@@ -39,7 +41,8 @@ import { SharedRoutingModule } from './shared-routing.module';
     HomeComponent,
     ContactUsComponent,
     Page404Component,
-    SlideUpComponent
+    SlideUpComponent,
+    LoginComponent
   ],
 })
 export class SharedModule { }

@@ -1,5 +1,5 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ZeromileCarsService } from 'src/app/cars/services/zeromile-cars.service';
+import { ZeromileCarsService } from 'src/app/services/zeromile-cars.service';
 import { FormComponent } from '../../form/form/form.component';
 
 @Component({

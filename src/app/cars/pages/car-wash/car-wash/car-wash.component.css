@@ -1,5 +1,18 @@
 
 
+.frame{
+    margin-top: 10vw; 
+    margin-bottom: 15vw;
+}
+
+.text{
+    font-family: "spartan";
+    font-size: 6vw;
+    padding: 10vw;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    word-spacing: 0.5px;    
+}
 
 
 @media only screen and (max-width: 574px  )  {

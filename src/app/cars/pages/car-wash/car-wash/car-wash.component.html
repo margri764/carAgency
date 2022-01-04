@@ -4,8 +4,121 @@
  
 
 
-<div class="container">
-  
-    <img  class="img-fluid animate__animated animate__fadeIn"  [src]="getImage()" alt="" width="50%">
+<div class="frame"  fxLayout="row wrap" fxLayoutAlign="center center" >
+    
+   <div fxFlex="40" fxLayoutAlign="center">
+        <img [src]="getImage()" alt="lavadero" class="animate__animated animate__fadeIn" fxFlex="80">
+    </div> 
 
+    <div fxFlex="60">
+        <p class="text">3 simples pasos para sacar un turno..</p>
+    </div>
+
+    <div fxFlex="100" fxLayoutAlign="center">
+        <img src="../../../../../assets/turno-carwash.png" alt="lavadero" class="animate__animated animate__fadeIn" fxFlex="60">
+    </div> 
 </div>
+
+
+<br><br>
+ <div class="container flex-grow-1 flex-shrink-0 py-0 animate__animated animate__fadeIn" #target >
+  <div class="mb-0 p-4 bg-white shadow-sm">
+
+
+ <div id="stepper1" class="bs-stepper" #bsStepper>
+   <div class="bs-stepper-header" role="tablist">
+     <div class="step" data-target="#test-l-1">
+       <button type="button" class="step-trigger" role="tab" id="stepper1trigger1" aria-controls="test-l-1">
+         <span class="bs-stepper-circle">1</span>
+         <span class="bs-stepper-label"> ¿Que servicio necesitas?</span>
+       </button>
+     </div>
+     <div class="bs-stepper-line"></div>
+     <div class="step" data-target="#test-l-2" >
+       <button type="button" [disabled]="disabledBrand"  class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2">
+         <span class="bs-stepper-circle">2</span>
+         <span class="bs-stepper-label">Elegi fecha y horario</span>
+       </button>
+     </div>
+     <div class="bs-stepper-line"></div>
+     <div class="step" data-target="#test-l-3">
+       <button type="button" [disabled]="disabledModel" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3">
+         <span class="bs-stepper-circle">3</span>
+         <span class="bs-stepper-label">Tus datos</span>
+       </button>
+     </div>
+   </div> 
+   <!-- end header -->
+
+   <br><br>
+
+   <div class="bs-stepper-content">
+
+       <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
+
+        <div fxLayout="row wrap" >
+        <div fxLayoutAlign="space-evenly center" fxLayout="row wrap" fxLayoutGap="40px" >
+            <p>auto</p>
+            <p>camioneta</p>
+
+        
+        </div>
+        <br><br><br><br>
+      </div>
+
+          
+        
+      </div>
+       <!-- end 1 -->
+
+       <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">        
+        
+  
+      <div fxLayout="row" fxLayoutAlign="center">
+
+        <app-login></app-login>
+        
+        </div>
+  <br><br>
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" (click)="toggleNavbar()">
+      Button with data-bs-target
+    </button>
+  
+  <div class="collapse" id="collapseExample"  [ngClass]="{ 'show': navbarOpen}">
+
+  </div> -->
+  <app-cars></app-cars>
+  <!-- (triggerToNext)="triggerNext = $event" 
+            (triggerToPrevious)="triggerPrevious = $event"
+            (modelSelect)="carSelect = $event"
+            [brandSelection]="brandSelection"
+            [modelSelection]="modelSelection" 
+             > -->
+
+    
+      </div>   
+     
+    <!-- end 2 -->
+
+      <div id="test-l-3" role="tabpanel" class="bs-stepper-pane text-center" aria-labelledby="stepper1trigger3">
+       
+        <app-form></app-form>
+        <button class="btn btn-primary mt-0" (click)="previous()">Previous</button>
+        
+    </div>    
+    <!-- end 3 -->
+
+  </div>
+          
+    </div>
+ 
+   </div>
+  </div>
+
+
+        
+    
+
+
+
+
