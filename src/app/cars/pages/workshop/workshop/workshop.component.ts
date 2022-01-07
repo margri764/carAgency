@@ -1,15 +1,7 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs';
 import { AppoinmentService } from 'src/app/services/appoinment/appoinment.service';
-
-
-// interface customDate{
-//     year: number,
-//     month: number,
-//     day : number
-// }
 
 @Component({
   selector: 'app-workshop',
@@ -21,82 +13,115 @@ import { AppoinmentService } from 'src/app/services/appoinment/appoinment.servic
 export class WorkshopComponent implements OnInit, AfterViewChecked, AfterViewInit {
 
   @ViewChild ('datetimepicker1') datetimepicker1! :ElementRef;
-  
-  @ViewChild ('10') hour10! :ElementRef ;
+ 
+  @ViewChild ('8') h8!   :ElementRef ;
+  @ViewChild ('9') h9!   :ElementRef ;
+  @ViewChild ('10') h10! :ElementRef ;
+  @ViewChild ('11') h11! :ElementRef ;
+  @ViewChild ('12') h12! :ElementRef ;
+
+
+
 
   testDisable(){
-    if(this.hour10.nativeElement.id == this.hourFront)
-    this.rendered.setProperty(this.hour10.nativeElement,"disabled","true")
+   
+    
+    this.resultAppointment.map(booking => ({
+      ...booking,
+      hour: booking.hour = (this.disableHour(booking.hour))
+    }));
+  }
+
+  disableHour(value:any){
+
+    if(value === this.h8.nativeElement.id){this.rendered.setProperty(this.h8.nativeElement,"disabled","true")}
+    if(value === this.h9.nativeElement.id){this.rendered.setProperty(this.h9.nativeElement,"disabled","true")}
+    if(value === this.h10.nativeElement.id){this.rendered.setProperty(this.h10.nativeElement,"disabled","true")}
+    if(value === this.h11.nativeElement.id){this.rendered.setProperty(this.h11.nativeElement,"disabled","true")}
+    if(value === this.h12.nativeElement.id){this.rendered.setProperty(this.h12.nativeElement,"disabled","true")}
+    return value;
+  }
+
+  enableHour(){
+      this.rendered.setProperty(this.h8.nativeElement,"disabled","")
+      this.rendered.setProperty(this.h9.nativeElement,"disabled","")
+      this.rendered.setProperty(this.h10.nativeElement,"disabled","")
+      this.rendered.setProperty(this.h11.nativeElement,"disabled","")
+      this.rendered.setProperty(this.h12.nativeElement,"disabled","")
   }
   
-
   public model!: NgbDateStruct;
+  private model2! : NgbDateStruct;
+  public actualDay!: NgbDateStruct;
   public date!: {year: number, month: number};
   private customDate : any = {};
   private value : number= 24;
-  disabledDates:NgbDateStruct[]=[
-    {year:2021,month:12,day: this.value}
-  ];
+
   private hour!: number;
   public login : string = '';
-  public resultAppointment : any []= [];
+  public resultAppointment : any []=[];
   public disabled : boolean = false;
   private hourFront : any;
-  private test: any =[];
+  private test: number = 0;
+
 
   constructor(private calendar: NgbCalendar,
-              private cdRef:ChangeDetectorRef,
+              private cdRef: ChangeDetectorRef,
               private element : ElementRef,
               private appoimentservice : AppoinmentService,
               private rendered : Renderer2,
               ) {
-  }
+        
+                  }
+
   ngAfterViewInit(): void {
  
- 
-
   }
 
-  trigger() {
-   this.element.nativeElement.datetimepicker({
-      language: 'pt-ES'
-    });
-  }
+
+
+  // trigger() {
+  //  this.element.nativeElement.datetimepicker({
+  //     language: 'pt-ES'
+  //   });
+  // }
 
   selectedHour(value : string){
-    
     this.hour = parseInt(value);
+  }
 
-    // switch( value ){ 
-    //   case '8' :
-    //    break;
-      
-    //   case '9': 
-    //   break;
+  private disabledDates:NgbDateStruct[]=[
+    {year:2022,month:1,day: this.value}
+  ];
 
-    //   case '10': 
-    //   console.log(value, this.hourFront)
 
-    //       if(value == this.hourFront){this.disabled = true}
-       
-            
-    //  break;
-     
-    //  case '11': 
-    //  break;
-  
+  modelDateChange(){
+
+    this.enableHour();
+    this.customDate = this.model;
+    this.sendDataToBack();
+
+    // if(JSON.stringify(this.model) === JSON.stringify( this.actualDay)){
+    //   console.log('desde el modelDateChange: customDate',this.customDate);
+    //   console.log('desde el modelDateChange : model',this.model)
+    //   this.sendDataToBack();
     // }
   }
 
-
-
   ngAfterViewChecked() {
+
     this.cdRef.detectChanges();
-    this.customDate=this.model;
-    this.hourFront;
-    // if(this.hourFront!= undefined){
-    //   this.disablehour(this.test)
+    // this.customDate = this.model;
+    // console.log('custom desde del viewchange',this.customDate);
+
+    // if(this.test == 1){
+    // this.modelDateChange();
     // }
+
+
+    
+    // this.hourFront;
+    // this.resultAppointment;
 
   }
 
@@ -104,8 +129,7 @@ export class WorkshopComponent implements OnInit, AfterViewChecked, AfterViewIni
     this.model = this.calendar.getToday();
   }
 
-  objectDateSeleccion(){
- 
+  objectDateSeleccion(){ 
 
     const objectHour = {
       hour : this.hour
@@ -114,58 +138,29 @@ export class WorkshopComponent implements OnInit, AfterViewChecked, AfterViewIni
     this.sendDataToBack();
   }
 
-  disablehour( value: string){
-    // console.log('pressed')
-
-    switch( value ){ 
-      case '8' :
-       break;
-      
-      case '9': 
-      break;
-
-      case '10': 
-      console.log('pressed')
-          if(value == this.hourFront){this.disabled = true}
-       
-            
-     break;
-     
-     case '11': 
-     break;
   
-    }
-
-  }
-
-    // this.sendDataToBack();
-
-
-    // this.customDate=this.customDate ={ 
-    //        ['hour']: this.hour
-    // };
-     // const {year, month, day} = this.customDate;
-    // let selectDate = year.toString() +  month.toString() + day.toString() + this.hour;
-    // // this.selectedHour(this.hourvalue);
-    // alert(this.customDate)
-   
-    // if( selectDate === '20211211'){
-    //   alert('ok')
-    // }
   
 
   sendDataToBack ( ) {
+
+    console.log('in sendData',this.customDate);
+
     this.appoimentservice.sendAppoinmentToBack(this.customDate)
-    .subscribe( ({appointment}) => {
-       this.resultAppointment = appointment;
-       console.log(this.resultAppointment)
+    .subscribe( res => {
+       this.resultAppointment = res;
+
+      //  let numberHour = this.resultAppointment.forEach( element => {this.resultAppointment[element] });
+      //  console.log(this.resultAppointment)
+       this.testDisable();
+       console.log('desde la respuesta:',res)
+       
+      //  this.test = 0;
+  
+
       } )  
    }
 
-   // this.hourFront = res;
-      //         this.hourFront= this.hourFront.hour
-      //         console.log(this.hourFront)
-      //           this.testDisable();
+
 
   isDisabled=(date:NgbDateStruct )=> {
     //in current we have the month and the year actual
@@ -178,10 +173,18 @@ export class WorkshopComponent implements OnInit, AfterViewChecked, AfterViewIni
   }
 
 
+
+
   ngOnInit(): void {
-    // this.isDisabled(this.value);
     this.model = this.calendar.getToday();
-    // this.testDisable();
+    this.actualDay = this.calendar.getToday();
+    this.customDate = this.model;
+    // if(this.model.day === this.actualDay.day){ console.log('model-actual')}
+    this.sendDataToBack();
+    // console.log('desde init: customDate',this.customDate);
+    // console.log('desde el init : model',this.model)
+
+    // this.test = 1;
     
   }
 

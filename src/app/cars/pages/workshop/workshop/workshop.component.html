@@ -4,7 +4,7 @@
 
   <div fxFlex="50" >
 
-      <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"
+      <ngb-datepicker #dp [(ngModel)]="model"  (ngModelChange)="modelDateChange()" (navigate)="date = $event.next"
       [markDisabled]="isDisabled"></ngb-datepicker>
 
       <hr/>
@@ -18,14 +18,15 @@
 
       <pre>Month: {{ date.month }}.{{ date.year }}</pre>
       <pre>Model: {{ model | json }}</pre> 
-  </div>
 
-  <div fxFlex="50" fxLayoutGap="20" fxLayout="row wrap">
-    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('8')" id="8" #8 >8 AM</button>
-    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('9')" id="9">9 AM</button>
-    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('10')" id="10"#10 >10 AM</button>
-    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('11')" id="11" >11 AM</button>
-    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('12')" id="12">12 AM</button>
+    </div>
+
+  <div fxFlex="50" fxLayoutGap="20" fxLayout="row wrap" >
+    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('8')"  id="8" #8>    8 AM </button>
+    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('9')"  id="9" #9>    9 AM </button>
+    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('10')" id="10" #10> 10 AM </button>
+    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('11')" id="11" #11> 11 AM </button>
+    <button class="btn btn-sm btn-primary mr-2" fxFlex="30" (click)="selectedHour('12')" id="12" #12> 12 AM </button>
 
     <!-- <button class="btn btn-sm btn-primary mr-2" fxFlex="30">15 PM</button>
     <button class="btn btn-sm btn-primary mr-2" fxFlex="30">16 PM</button>
@@ -41,3 +42,6 @@
 
 
 </div>
+
+<button class="btn btn-success" (click)="testDisable()">DISABLED</button>
+<button class="btn btn-success" (click)="enableHour()">ENABLED</button>
