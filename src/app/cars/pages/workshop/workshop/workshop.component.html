@@ -5,7 +5,7 @@
   <div fxFlex="50" >
 
       <ngb-datepicker #dp [(ngModel)]="model"  (ngModelChange)="modelDateChange()" (navigate)="date = $event.next"
-      [markDisabled]="isDisabled"></ngb-datepicker>
+      [markDisabled]="isDisabled"     (focus)="change($event.target,dob)" #dob="ngbDatepicker"></ngb-datepicker>
 
       <hr/>
 
@@ -43,5 +43,4 @@
 
 </div>
 
-<button class="btn btn-success" (click)="testDisable()">DISABLED</button>
-<button class="btn btn-success" (click)="enableHour()">ENABLED</button>
+<!-- <button class="btn btn-success" (click)="testMoment()">CURRENT DATE</button> -->

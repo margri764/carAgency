@@ -19,30 +19,14 @@ export class AppoinmentService {
 sendAppoinmentToBack (body : any){
 
   return this.http.post<any>(`${this.baseUrl}api/appointment`, body)
-// .pipe(
-//   map( resp => {
-//      this.resultAppointment = resp.appointmentInDb.map(
-//        (item:any) => (item.hour)
+   }
 
-//      );
-//      return {
-//       appointment : this.resultAppointment
-//     };
-//   }))
-// };
-
-}
-}
   
+getAppoinmentFromBack (){
+
+  return this.http.get<any>(`${this.baseUrl}api/appointment`)
+   }
+
+  }
 
 
-// return this.http.get(`${this.baseUrl}api/appoinment`, body)
-// .pipe(
-//   map ( res => {
-//       this.resultAppoinment = res.userName 
-//       return { 
-//         userName : this.resultAppoinment}
-
-//   })
-//   )
-// }}
