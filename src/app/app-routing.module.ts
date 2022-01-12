@@ -4,11 +4,18 @@ import { ContactUsComponent } from './shared/pages/contact-us/contact-us.compone
 
 import { HomeComponent } from './shared/pages/home/home.component';
 import { Page404Component } from './shared/pages/page404/page404.component';
+import { StartComponent } from './shared/pages/start/start/start.component';
 
 const routes: Routes = [
   {
     path: "", redirectTo: "home", pathMatch: 'full'
   },
+  // {
+  //   path: "", redirectTo: "welcome", pathMatch: 'full'
+  // },
+  // {
+  //   path:"welcome", component: StartComponent
+  // },
   {
     path: "home", component: HomeComponent
   },

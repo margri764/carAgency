@@ -7,10 +7,22 @@ import { filter } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'carAgency';
 
+  public disabled : boolean= false;
+
   constructor( public router : Router )  {  }
+
+
+  ngOnInit(): void {
+
+        setTimeout(()=>{
+
+          this.disabled = true
+
+        },5000)
+  }
 
  
 

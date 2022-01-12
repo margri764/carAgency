@@ -11,10 +11,10 @@ export class SlideUsedCarComponent implements OnInit {
 
   arrayUsedCars = [
     {
-      img1: "./assets/1.jpg",
-      img2: "./assets/2.jpg",
-      img3: "./assets/3.jpg",
-      img4: "./assets/4.jpg",
+      img1: "./assets/micruze1.jpeg",
+      img2: "./assets/micruze2.jpeg",
+      img3: "./assets/micruze3.jpeg",
+      img4: "./assets/micruze4.jpeg",
       img5: "./assets/5.jpg"
     },
   ]

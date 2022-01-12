@@ -12,6 +12,7 @@ import { SlideUpComponent } from './pages/slide-up/slide-up.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { LoginComponent } from './pages/login/login.component';
+import { StartComponent } from './pages/start/start/start.component';
 
 
 
@@ -25,7 +26,8 @@ import { LoginComponent } from './pages/login/login.component';
     NavbarComponent,
     SlideUpComponent,
     Page404Component,
-    LoginComponent
+    LoginComponent,
+    StartComponent
     
   ],
   imports: [
@@ -42,7 +44,8 @@ import { LoginComponent } from './pages/login/login.component';
     ContactUsComponent,
     Page404Component,
     SlideUpComponent,
-    LoginComponent
+    LoginComponent, 
+    StartComponent
   ],
 })
 export class SharedModule { }
