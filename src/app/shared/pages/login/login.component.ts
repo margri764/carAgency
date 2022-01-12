@@ -58,6 +58,8 @@ export class LoginComponent implements OnInit{
   }
 
   googleLogin(){
+
+    
     if(this.user!= null) {
       this.loginService.loginWithGoogle(this.user).subscribe((res)=>{ console.log(res) })
    }
