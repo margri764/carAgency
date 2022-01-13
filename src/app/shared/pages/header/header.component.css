@@ -88,7 +88,10 @@ span#whatsapp:hover {
  color:aliceblue;
 }
 
-
+a{
+    font-size: 3vw;
+    line-height: 5vw;
+}
 
 @media only screen and (max-width: 574px  )  {
 
@@ -96,8 +99,13 @@ span#whatsapp:hover {
         height: 9vw;
     }
 
+    #link{
+       
+        font-size: 6vw;
+    }
+
     a{
-        font-size: 3vw;
+        font-size: 5vw;
         line-height: 5vw;
     }
 
@@ -126,7 +134,12 @@ span#whatsapp:hover {
     color:rgb(194, 194, 190);
     margin: 1vw;
     }
-  
+    
+    span#search{
+        font-size: 8vw;
+    }
+      
+ 
 
  
 }
@@ -145,9 +158,9 @@ span#whatsapp:hover {
 
 @media only screen and (min-width: 1281px)   {
 
-    a{
+    /* a{
         font-size: 1.5vw;
-    }
+    } */
 }
     
 

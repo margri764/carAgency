@@ -4,14 +4,16 @@
 
 
 .footer-container{
-  
-    height: 50vw;
+    width: 100vw;
+    height: 100vh;
     margin-top: 10vw;
-    background-image: url("../../../../assets/footer1.png");
+    background-image: url("../../../../assets/footer3.png");
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
 }
+
+
 
 
 .mail a {
@@ -26,11 +28,11 @@
     color: aqua;
 }
 
-.address{
+/* .address{
     font-weight: bold;
     color: white;
     font-size: 2vw;
-}
+} */
 
 .social{
    
@@ -42,9 +44,7 @@
 span#search{
     color: white;
     font-size: 2.7vw;
-    margin: 1vw;
-    
-
+    margin: 2vw;
 }
 
 
@@ -71,7 +71,7 @@ span#search{
 
 span#facebook{
 font-size: 2.7vw;
-color:rgb(15, 159, 255);
+color: whitesmoke;
 margin: 1vw;
 transition: all 1s 0s ease;
 
@@ -97,6 +97,15 @@ span#whatsapp:hover {
 
 @media only screen and (max-width: 574px  )  {
 
+    .footer-container{
+        width: 100vw;
+        height: 100vh ;
+        margin-top: 10vw;
+        background-image: url("../../../../assets/footer2.png");
+        background-position:center;
+        background-size:cover;
+    }
+
     .nav-tabs{
         height: 9vw;
     }
@@ -117,21 +126,29 @@ span#whatsapp:hover {
     }
     
     span#whatsapp{
-        font-size: 8vw;
+        font-size: 9vw;
     }
 
     span#facebook{
-    font-size: 8vw;
-    color:rgb(194, 194, 190);
-    margin: 1vw;     
+        font-size: 8vw;
+        color:rgb(194, 194, 190);
+        margin: 1vw;     
     }
 
     span#instagram{
-    font-size: 8vw;
-    color:rgb(194, 194, 190);
-    margin: 1vw;
+        font-size: 8vw;
+        color:rgb(194, 194, 190);
+        margin: 1vw;
     }
+
+    span#search{
+        font-size: 8vw;
+    }
+    
   
+    /* .address{
+        font-size: 4vw;
+    } */
 
  
 }
