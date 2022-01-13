@@ -3,8 +3,8 @@
     width: 100vw;    
     display: flex;
     flex-direction: column;
-    padding-top: 1.5vw;
-    margin: 1vw !important;
+    /* padding-top: 1vw; */
+    /* margin: 1vw !important; */
     overflow: hidden; 
     
 }
@@ -17,7 +17,7 @@
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
 }
 
@@ -26,8 +26,31 @@
 }
 
 .footer {
-    /* min-height: 5vw; */
-    /* margin-top: 10vw; */
-    /* margin-bottom: 50px; */
+    flex-grow: 0;
+
 
 }
+
+/* @media only screen and (max-width: 574px  )  {
+
+  
+ 
+}
+
+@media only screen and (min-width: 575px) and (max-width: 768px  )  {
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1280px  )  {
+
+ 
+
+}
+
+@media only screen and (min-width: 1281px)   {
+
+
+
+}
+     */
+

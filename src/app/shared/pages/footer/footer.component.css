@@ -4,13 +4,13 @@
 
 
 .footer-container{
-    width: 100vw;
-    height: 100vh;
+    /* height: 1000px; */
     margin-top: 10vw;
     background-image: url("../../../../assets/footer3.png");
-    background-position: center;
-    background-size: cover;
-    /* background-repeat: no-repeat; */
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* overflow: hidden; */
 }
 
 
@@ -95,7 +95,7 @@ span#whatsapp:hover {
 
 
 
-@media only screen and (max-width: 574px  )  {
+@media only screen and (max-width: 574px)  {
 
     .footer-container{
         width: 100vw;
@@ -157,19 +157,43 @@ span#whatsapp:hover {
 
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1280px  )  {
+
+@media only screen and (min-width: 769px) and (max-width: 1450px)  {
 
     a{
         font-size: 2vw;
     }
 
+    .footer-container{
+        height: 1000px;
+        background-position:center ;
+        background-size: cover;
+    }
+
+    span#whatsapp{
+        font-size: 3vw;
+    }
+
+
 }
 
-@media only screen and (min-width: 1281px)   {
+@media only screen and (min-width: 1450px)   {
+
+    .footer-container{
+        height: 900px;
+        background-position:center ;
+        background-size: cover;
+    }
+
+
 
     a{
         font-size: 1.5vw;
     }
+
+ 
+
+
 }
     
 
